@@ -1,5 +1,7 @@
 package fr.ippon.pokemonapp
 
+import fr.ippon.pokemonapp.Constants.DEFAULT_SPRITE_URL
+
 object Helpers {
     fun getPokemonId(url: String): Int {
         val str = url.dropLast(1)
@@ -8,6 +10,6 @@ object Helpers {
     }
 
     fun getPokemonSpriteURL(id: Int): String {
-        return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png"
+        return "${DEFAULT_SPRITE_URL + id}.png"
     }
 }
