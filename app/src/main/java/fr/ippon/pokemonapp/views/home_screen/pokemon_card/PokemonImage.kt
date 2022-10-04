@@ -1,4 +1,4 @@
-package fr.ippon.pokemonapp.views.main_page.pokemon_card
+package fr.ippon.pokemonapp.views.home_screen.pokemon_card
 
 import android.graphics.Bitmap
 import androidx.compose.foundation.layout.Box

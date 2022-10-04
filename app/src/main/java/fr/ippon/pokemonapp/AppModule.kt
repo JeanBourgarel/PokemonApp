@@ -1,9 +1,11 @@
 package fr.ippon.pokemonapp
 
 import fr.ippon.pokemonapp.Constants.API_URL
+import fr.ippon.pokemonapp.repositories.FakePokemonRepository
 import fr.ippon.pokemonapp.repositories.PokemonRepository
 import fr.ippon.pokemonapp.repositories.RealPokemonRepository
 import fr.ippon.pokemonapp.services.ApiService
+import fr.ippon.pokemonapp.viewmodels.DetailViewModel
 import fr.ippon.pokemonapp.viewmodels.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -23,7 +25,6 @@ val appModule = module {
             .build().create();
     }
 
-    viewModel {
-        HomeViewModel(get())
-    }
+    viewModel { HomeViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

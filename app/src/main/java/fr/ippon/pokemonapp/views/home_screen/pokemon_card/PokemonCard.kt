@@ -1,6 +1,7 @@
-package fr.ippon.pokemonapp.views.main_page.pokemon_card
+package fr.ippon.pokemonapp.views.home_screen.pokemon_card
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,10 +15,11 @@ import androidx.compose.ui.unit.dp
 import fr.ippon.pokemonapp.models.app.PokemonSkeleton
 
 @Composable
-fun PokemonCard(pokemon: PokemonSkeleton, modifier: Modifier = Modifier) {
+fun PokemonCard(pokemon: PokemonSkeleton, onClick: () -> Unit,  modifier: Modifier = Modifier) {
     var backgroundColor by remember { mutableStateOf(Color.DarkGray) }
     var gradientColor by remember { mutableStateOf(Color.Black) }
     Card(
+        modifier = Modifier.clickable { onClick() },
         backgroundColor = backgroundColor,
         elevation = 5.dp,
         shape = RoundedCornerShape(15),

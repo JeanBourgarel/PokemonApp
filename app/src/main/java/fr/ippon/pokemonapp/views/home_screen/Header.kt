@@ -1,4 +1,4 @@
-package fr.ippon.pokemonapp.views.main_page
+package fr.ippon.pokemonapp.views.home_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

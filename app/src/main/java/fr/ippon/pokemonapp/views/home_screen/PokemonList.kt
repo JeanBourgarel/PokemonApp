@@ -1,4 +1,4 @@
-package fr.ippon.pokemonapp.views.main_page
+package fr.ippon.pokemonapp.views.home_screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,10 +9,10 @@ import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 import fr.ippon.pokemonapp.models.app.PokemonSkeleton
-import fr.ippon.pokemonapp.views.main_page.pokemon_card.PokemonCard
+import fr.ippon.pokemonapp.views.home_screen.pokemon_card.PokemonCard
 
 @Composable
-fun PokemonList(pokemonList: List<PokemonSkeleton>, onScrollToEnd: () -> Unit) {
+fun PokemonList(pokemonList: List<PokemonSkeleton>, onScrollToEnd: () -> Unit, onClickOnPokemon: (String) -> Unit) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(100.dp),
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 16.dp),
@@ -26,7 +26,10 @@ fun PokemonList(pokemonList: List<PokemonSkeleton>, onScrollToEnd: () -> Unit) {
             if (index == pokemonList.lastIndex) {
                 onScrollToEnd()
             }
-            PokemonCard(pokemon)
+            PokemonCard(
+                pokemon,
+                onClick = { onClickOnPokemon(pokemon.name) }
+            )
         }
     }
 }
